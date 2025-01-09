@@ -1,0 +1,103 @@
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #808080;
+}
+
+.hero-left {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 0;
+}
+
+.hero-text {
+  color: #414141;
+}
+
+.bestsellers-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.line {
+  width: 2rem;
+  height: 2px;
+  background-color: #414141;
+}
+
+.label-text {
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.hero-heading {
+  font-family: "Prata", serif;
+  font-size: 1.875rem;
+  line-height: 1.75;
+}
+
+.shop-now {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.shop-text {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.shop-line {
+  width: 2rem;
+  height: 1px;
+  background-color: #414141;
+}
+
+.hero-image {
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .hero-container {
+    flex-direction: row;
+  }
+
+  .hero-left {
+    width: 50%;
+    padding: 0;
+  }
+
+  .hero-heading {
+    padding: 0.75rem 0;
+  }
+
+  .hero-image {
+    width: 25%;
+  }
+}
+
+@media (min-width: 768px) {
+  .line {
+    width: 2.75rem;
+  }
+
+  .label-text {
+    font-size: 1rem;
+  }
+
+  .shop-text {
+    font-size: 1rem;
+  }
+
+  .shop-line {
+    width: 2.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-heading {
+    font-size: 3rem;
+  }
+}
