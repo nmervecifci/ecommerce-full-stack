@@ -1,53 +1,56 @@
 {
+  "functions": {
+    "backend/server.js": {
+      "runtime": "@vercel/node@18.x"
+    }
+  },
   "builds": [
-    {
-      "src": "backend/server.js",
-      "use": "@vercel/node"
-    },
     {
       "src": "frontend/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist"
+        "buildCommand": "npm run build",
+        "distDir": "dist",
+        "installCommand": "npm install"
       }
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/cart/(.*)",
-      "dest": "backend/server.js"
+      "source": "/cart/(.*)",
+      "destination": "/backend/server.js"
     },
     {
-      "src": "/cart",
-      "dest": "backend/server.js"
+      "source": "/cart",
+      "destination": "/backend/server.js"
     },
     {
-      "src": "/order/(.*)",
-      "dest": "backend/server.js"
+      "source": "/order/(.*)",
+      "destination": "/backend/server.js"
     },
     {
-      "src": "/order",
-      "dest": "backend/server.js"
+      "source": "/order",
+      "destination": "/backend/server.js"
     },
     {
-      "src": "/product/(.*)",
-      "dest": "backend/server.js"
+      "source": "/product/(.*)",
+      "destination": "/backend/server.js"
     },
     {
-      "src": "/product",
-      "dest": "backend/server.js"
+      "source": "/product",
+      "destination": "/backend/server.js"
     },
     {
-      "src": "/user/(.*)",
-      "dest": "backend/server.js"
+      "source": "/user/(.*)",
+      "destination": "/backend/server.js"
     },
     {
-      "src": "/user",
-      "dest": "backend/server.js"
+      "source": "/user",
+      "destination": "/backend/server.js"
     },
     {
-      "src": "/(.*)",
-      "dest": "frontend/dist/$1"
+      "source": "/(.*)",
+      "destination": "/frontend/dist/index.html"
     }
   ]
 }
