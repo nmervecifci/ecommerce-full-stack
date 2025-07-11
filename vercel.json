@@ -1,0 +1,53 @@
+{
+  "builds": [
+    {
+      "src": "backend/server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/cart/(.*)",
+      "dest": "backend/server.js"
+    },
+    {
+      "src": "/cart",
+      "dest": "backend/server.js"
+    },
+    {
+      "src": "/order/(.*)",
+      "dest": "backend/server.js"
+    },
+    {
+      "src": "/order",
+      "dest": "backend/server.js"
+    },
+    {
+      "src": "/product/(.*)",
+      "dest": "backend/server.js"
+    },
+    {
+      "src": "/product",
+      "dest": "backend/server.js"
+    },
+    {
+      "src": "/user/(.*)",
+      "dest": "backend/server.js"
+    },
+    {
+      "src": "/user",
+      "dest": "backend/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "frontend/dist/$1"
+    }
+  ]
+}
